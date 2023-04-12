@@ -2,13 +2,21 @@ import React, { useEffect, useState } from "react";
 import banner from "../../assets/All Images/P3OLGJ1 copy 1.png";
 import "./Home.css";
 import Category from "../Category/Category";
+import Feature from "../Feature/Feature";
 
 const Home = () => {
 	const [categories, setCategories] = useState([]);
+	const [features, setFeatures] = useState([]);
 	useEffect(() => {
 		fetch("categories.json")
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
+	}, []);
+
+	useEffect(() => {
+		fetch("feature.json")
+			.then((res) => res.json())
+			.then((data) => setFeatures(data));
 	}, []);
 
 	return (
@@ -38,9 +46,9 @@ const Home = () => {
 
 			{/* Category Section */}
 			<div className='md:px-48 px-4 md:my-20 my-12'>
-				<div className="text-center ">
+				<div className='text-center '>
 					<h2 className='text-2xl font-bold'>Job Category List</h2>
-					<p className="banner-para py-6">
+					<p className='banner-para py-6'>
 						Explore thousands of job opportunities with all the information you
 						need. Its your future
 					</p>
@@ -48,6 +56,22 @@ const Home = () => {
 				<div className='md:flex justify-between my-5'>
 					{categories.map((category) => (
 						<Category key={category.id} category={category}></Category>
+					))}
+				</div>
+			</div>
+
+			{/* Featured job section */}
+			<div className='md:px-48 px-4 md:my-20 my-12'>
+				<div className='text-center '>
+					<h2 className='text-2xl font-bold'>Featured Jobs</h2>
+					<p className='banner-para py-6'>
+						Explore thousands of job opportunities with all the information you
+						need. Its your future
+					</p>
+				</div>
+				<div className='md:grid grid-cols-2 justify-between gap-4'>
+					{features.map((feature) => (
+						<Feature key={feature.id} feature={feature}></Feature>
 					))}
 				</div>
 			</div>
