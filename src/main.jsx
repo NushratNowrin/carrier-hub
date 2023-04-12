@@ -6,12 +6,17 @@ import Header from "./Layout/Header";
 import Statistics from "./components/Statistics/Statistics";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs";
 import Blogs from "./components/Blogs/Blogs";
+import Home from "./components/Home/Home";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Header></Header>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
       {
         path: "statistics",
         element: <Statistics></Statistics>,

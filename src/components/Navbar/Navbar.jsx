@@ -7,8 +7,8 @@ const Navbar = () => {
 	const [open, setOpen] = useState(false);
 	return (
 		<nav>
-			<div className='header flex justify-between md:items-center md:mx-48 mx-4 md:my-12 my-2'>
-				<h2 className='brand-name text-3xl font-bold'>
+			<div className='header flex justify-between md:items-center md:mx-48 mx-4 md:py-12 py-4'>
+				<h2 className='brand-name text-2xl font-bold'>
 					<a href='/'>CareerFolk</a>
 				</h2>
 				<div>
@@ -29,7 +29,7 @@ const Navbar = () => {
 									open ? "" : "hidden"
 								}`}>
 							<ul
-								className="nav-ul md:flex gap-10 font-medium">
+								className="nav-ul md:flex gap-10">
 								<li>
 									<ActiveLink to='/statistics'>Statistics</ActiveLink>
 								</li>

@@ -1,0 +1,19 @@
+.gradient-heading {
+	background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.banner-para {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+	color: #757575;
+}
+.banner-button{
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+}
+.banner-button:hover{
+    background: linear-gradient(90deg, #5068ff 0%, #7546f8 100%);
+}
