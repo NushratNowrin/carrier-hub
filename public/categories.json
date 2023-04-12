@@ -1,20 +1,24 @@
 [
       {
+        "id" : 1,
         "logo": "../src/assets/Icons/accounts 1.png",
         "name": "Account & Finance",
         "jobs": "300 Jobs Available"
       },
       {
+        "id" : 2,
         "logo": "../src/assets/Icons/business 1.png",
         "name": "Creative Design",
         "jobs": "100+ Jobs Available"
       },
       {
+        "id" : 3,
         "logo": "../src/assets/Icons/social-media 1.png",
         "name": "Marketing & Sales",
         "jobs": "150 Jobs Available"
       },
       {
+        "id" : 4,
         "logo": "../src/assets/Icons/chip 1.png",
         "name": "Engineering Job",
         "jobs": "224 Jobs Available"
