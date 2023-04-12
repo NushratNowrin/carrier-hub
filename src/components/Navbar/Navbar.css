@@ -1,0 +1,6 @@
+.nav-button{
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+}
+.nav-button:hover{
+    background: linear-gradient(90deg, #5068ff 0%, #7546f8 100%);
+}
