@@ -3,21 +3,23 @@ import banner from "../../assets/All Images/P3OLGJ1 copy 1.png";
 import "./Home.css";
 import Category from "../Category/Category";
 import Feature from "../Feature/Feature";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
 	const [categories, setCategories] = useState([]);
-	const [features, setFeatures] = useState([]);
+	// const [features, setFeatures] = useState([]);
 	useEffect(() => {
 		fetch("categories.json")
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
 	}, []);
 
-	useEffect(() => {
-		fetch("feature.json")
-			.then((res) => res.json())
-			.then((data) => setFeatures(data));
-	}, []);
+	// useEffect(() => {
+	// 	fetch("feature.json")
+	// 		.then((res) => res.json())
+	// 		.then((data) => setFeatures(data));
+	// }, []);
+	const features = useLoaderData()
 
 	return (
 		<div>

@@ -1,3 +1,12 @@
 .feature-logo{
     width: 80px;
 }
+
+.feature-logo-div{
+    height: 80px;
+}
+
+.view-details-button{
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+}
+
