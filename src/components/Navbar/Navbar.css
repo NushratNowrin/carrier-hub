@@ -4,3 +4,20 @@
 .nav-button:hover{
     background: linear-gradient(90deg, #5068ff 0%, #7546f8 100%);
 }
+.nav-ul{
+    margin-inline-start: -36rem;
+}
+
+/* Mobile responsive */
+@media only screen and (max-width: 576px) {
+    .nav-ul{
+        padding-top: 30px;
+        margin-inline-start: 0;
+    }
+    .menu{
+        text-align: right;
+    }
+    .nav-ul li, .nav-ul button{
+        margin: 10px 0;
+    }
+  }
