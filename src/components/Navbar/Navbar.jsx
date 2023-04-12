@@ -42,7 +42,7 @@ const Navbar = () => {
 							</ul>
 							<div>
 								<button className='nav-button px-5 py-3 rounded-md text-white font-semibold'>
-									Star Applying
+									Start Applying
 								</button>
 							</div>
 						</div>

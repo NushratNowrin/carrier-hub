@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Header from "./Layout/Header";
-import Statistics from "./components/Statistics/Statistics";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs";
 import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home";
+import Statistics from "./components/Statistics/Statistics";
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "statistics",
-        element: <Statistics></Statistics>,
+        element: <Statistics></Statistics>
       },
       {
         path: "applied-jobs",
