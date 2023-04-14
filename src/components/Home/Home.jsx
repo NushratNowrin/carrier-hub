@@ -8,6 +8,8 @@ import { useLoaderData } from "react-router-dom";
 const Home = () => {
 	const [categories, setCategories] = useState([]);
 	// const [features, setFeatures] = useState([]);
+	const [noOfElements, setNoOfElements] = useState(4);
+
 	useEffect(() => {
 		fetch("categories.json")
 			.then((res) => res.json())
@@ -15,12 +17,17 @@ const Home = () => {
 	}, []);
 
 	// useEffect(() => {
-	// 	fetch("feature.json")
+		// fetch("feature.json")
 	// 		.then((res) => res.json())
 	// 		.then((data) => setFeatures(data));
 	// }, []);
-	const features = useLoaderData()
+	const features = useLoaderData();
 
+	const slice = features.slice(0, noOfElements);
+
+	const loadMore = () =>{
+		setNoOfElements(noOfElements + 2);
+	}
 	return (
 		<div>
 			{/* Banner */}
@@ -63,7 +70,7 @@ const Home = () => {
 			</div>
 
 			{/* Featured job section */}
-			<div className='md:px-48 px-4 md:my-20 my-12'>
+			<div className='md:px-48 px-4 md:my-20 mt-12 mb-32'>
 				<div className='text-center '>
 					<h2 className='text-2xl font-bold'>Featured Jobs</h2>
 					<p className='banner-para py-6'>
@@ -72,9 +79,24 @@ const Home = () => {
 					</p>
 				</div>
 				<div className='md:grid grid-cols-2 justify-between gap-4'>
-					{features.map((feature) => (
+					{slice.map((feature) => (
 						<Feature key={feature.id} feature={feature}></Feature>
 					))}
+				</div>
+				<div className="m-10 text-center">
+					
+						<span>
+							{
+								features.length >=  noOfElements? (
+									<button onClick={()=>loadMore()} className='banner-button px-5 py-3 rounded-md text-white font-semibold '>
+									See All Jobs
+									</button>
+								) : (
+									<div>No More Jobs</div>
+								)
+							}
+						</span>
+					
 				</div>
 			</div>
 		</div>

@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import Statistics from "./components/Statistics/Statistics";
 import Error from "./components/Error/Error";
 import JobDetails from "./components/JobDetails/JobDetails";
+import AppliedJobsLoader from "./components/Loader/AppliedJobsLoader";
 
 const router = createBrowserRouter([
 	{
@@ -18,8 +19,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('../public/feature.json')
+        loader: () => fetch('/feature.json')
       },
+      {
+				path: "JobDetails/:id",
+				element: <JobDetails></JobDetails>,
+				loader: ({params}) => fetch('/feature.json')
+			},
       {
         path: "statistics",
         element: <Statistics></Statistics>
@@ -27,16 +33,12 @@ const router = createBrowserRouter([
       {
         path: "applied-jobs",
         element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('/feature.json')
       },
       {
         path: "blog",
         element: <Blogs></Blogs>,
       },
-      {
-				path: "job/:featureId",
-				element: <JobDetails></JobDetails>,
-				loader: ({params}) => fetch(`../public/feature.json/${params.featureId}`)
-			},
       {
         path: '*',
         element: <Error></Error>

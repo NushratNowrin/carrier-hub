@@ -45,7 +45,7 @@ const Feature = ({ feature }) => {
                     <p >Salary: {salary}</p>
                 </div>
 			</div>
-            <Link to={`job/${id}`} className='view-details-button px-5 py-3 rounded-md text-white font-semibold'>View Details</Link>
+            <Link to={`JobDetails/${id}`} className='view-details-button px-5 py-3 rounded-md text-white font-semibold'>View Details</Link>
 		</div>
 	);
 };
