@@ -10,26 +10,28 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 const AppliedJobs = () => {
     const [open, setOpen] = useState(false);
 	const jobs = useLoaderData();
-	// console.log(jobs);
 	const storedJobs = getShoppingCart();
-	// console.log(storedJobs);
-	const savedJob = [];
-	// console.log(storedData)
+	let savedJob = [];
 	for (const id in storedJobs) {
 		const intId = parseInt(id);
-		// console.log(intId)
 		const addedJob = jobs.find((job) => job.id === intId);
-		// console.log(addedJob)
 		if (addedJob) {
 			const totalQuantity = storedJobs[id];
-			// console.log(id, storedJobs);
-			// console.log(addedProduct.quantity);
 			addedJob.quantity = totalQuantity;
-
 			savedJob.push(addedJob);
 		}
-		console.log(savedJob);
+		// console.log(savedJob);
 	}
+
+    const filterItem = (currentJobStatus) =>{
+        const filterJobs = savedJob.filter( currentItem => currentItem.jobStatus === currentJobStatus);
+        console.log(filterJobs);
+        savedJob = [];
+        savedJob.push(filterJobs);
+        // console.log(savedJob)
+    }
+
+
 	return (
 		<div>
 			<div className='grid grid-cols-3 justify-between bg-stone-50'>
@@ -60,10 +62,10 @@ const AppliedJobs = () => {
 					<div className={`${open ? "" : "hidden"}`}>
 						<ul>
 							<li>
-								<button className="hover:bg-slate-200 px-5 py-2 mt-2  rounded-md">Onsite</button>
+								<button className="hover:bg-slate-200 px-5 py-2 mt-2  rounded-md" onClick={() => filterItem('Onsite')}>Onsite</button>
 							</li>
 							<li>
-                            <button className="hover:bg-slate-200 px-5 py-2 mt-2 rounded-md">Remote</button>
+                            <button className="hover:bg-slate-200 px-5 py-2 mt-2 rounded-md" onClick={() => filterItem('Remote')}>Remote</button>
 							</li>
 						</ul>
 					</div>

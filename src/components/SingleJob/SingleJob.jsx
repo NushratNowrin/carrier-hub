@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import ActiveLink from "../ActiveLink/ActiveLink";
 
 
-const SingleJob = ({ job }) => {
+const SingleJob = ({job}) => {
 	// const [open, setOpen] = useState(false);
+   
 	const {
 		id,
 		logo,
@@ -17,6 +18,8 @@ const SingleJob = ({ job }) => {
 		location,
 		salary,
 	} = job;
+   
+
 	return (
 		<div>
 			{/* <div className='text-right'>
